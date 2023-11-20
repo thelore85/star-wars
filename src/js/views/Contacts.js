@@ -27,11 +27,7 @@ export default function Contacts() {
 
   return (
 
-    <>
-    <Button variant="primary" onClick={handleShow}>
-      Launch demo modal
-    </Button>
-
+    <> 
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>Delete Contact!</Modal.Title>
