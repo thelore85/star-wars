@@ -10,12 +10,10 @@ export const GlobalContext = (props) => {
     photos : []
   })
 
-  // Actions 
-// ...
-
+// Actions 
 const [actions, setActions] = useState({
   getUsers: async () => {
-    const url = "https://jsonplaceholder.typicode.com/users";
+    const url = "https://playground.4geeks.com/apis/fake/contact/agenda/thelore85";
     const options = { method: "GET" };
 
     const response = await fetch(url, options);
@@ -41,26 +39,50 @@ const [actions, setActions] = useState({
   },
 
   deleteUser : async (id) => {
-    const url = `https://jsonplaceholder.typicode.com/photos/${id}`;
+    const url = `https://playground.4geeks.com/apis/fake/contact/${id}`;
     const options = { 
       method: "DELETE"
     };
 
     const response = await fetch(url, options);
     if (response.ok) {
+      console.log("user delated: ", store)
       actions.getUsers()
     } else {
       console.log('ERROR flux action: getPhotos: ', response.status, response.statusText);
     }
   },
 
-  updateUsers : () => {
+  addUser : async (request) => {
 
-  }
+    const { name, email, agenda, address, phone } = request;
+
+    console.log('api debug', request )
+    const contactInfo = {
+        full_name: name,
+        email: email,
+        agenda_slug: agenda,
+        address: address,
+        phone: phone
+      }
+
+    const url = "https://playground.4geeks.com/apis/fake/contact/";
+    const options = { 
+      method: "POST",
+      body: JSON.stringify(contactInfo),
+      headers: { "Content-Type": "application/json" }
+    };
+
+    const response = await fetch(url, options);
+    if (response.ok) {
+      console.log("user added: ", store)
+      actions.getUsers()
+    } else {
+      console.log('ERROR flux action: getPhotos: ', response.status, response.statusText);
+    }
+  },
 
 });
-
-// ...
 
   useEffect(() => {
      actions.getUsers()
