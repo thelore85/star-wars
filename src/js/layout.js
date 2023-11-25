@@ -4,6 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 
 // Views
 import Contacts from "./views/Contacts";
+import Home from "./views/Home";
 import CreateContact from "./views/CreateContact";
 
 // Components
@@ -12,6 +13,7 @@ import { Footer } from "./component/footer";
 
 // Context";
 import { GlobalContext } from "./store/GlobalContext";
+import File404 from "./views/File404";
   
 
 export default function Layout() {
@@ -25,9 +27,10 @@ export default function Layout() {
           <ScrollToTop>
             <Navbar />
             <Routes>
-              <Route path="/" element={<Contacts />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/contacts" element={<Contacts />} />
               <Route path="/create" element={<CreateContact />} />
-              <Route path="*" element={<h1>Not found!</h1>} />
+              <Route path="*" element={<File404 />} />
             </Routes>
             <Footer />
           </ScrollToTop>

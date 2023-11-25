@@ -5,6 +5,7 @@ import { faEdit, faInbox, faLocationDot, faMagnifyingGlassChart, faPhone, faRecy
 
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 
 
 export default function Contacts() {
@@ -82,6 +83,11 @@ export default function Contacts() {
                 )})) : 
               (<h3 className="text-center">No friens yet!</h3>)}
           </ul>
+
+          <Link to="/create">
+          <button className="m-auto btn bg-black border-warning text-warning mb-5">Create New Contact</button>
+        </Link>
+
           
         </div>
       </div>

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
 export const Footer = () => (
-	<footer className="footer mt-auto py-3 text-center">
-		<p className="fw-bolder">
-			Made with <i className="fa fa-heart text-danger" /> by{" "}
-			<a href="http://www.piqus.it">Piqus</a>
+	<footer className="footer mt-auto py-3 text-center bg-black text-white">
+		<p className="fw-lighter">
+			Powered by {" "}
+			<a className="text-warning " href="http://www.piqus.it">Piqus.it</a>
 		</p>
 	</footer>
 );
