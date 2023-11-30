@@ -12,10 +12,22 @@ export const GlobalContext = (props) => {
     starships: [],
     planets: [],
     favorites: [],
+    details: {}
   })
 
   // Actions 
   const [actions, setActions] = useState({
+
+    getDetails: async (url) => {
+      const options = {method: 'GET'}
+      const response = await fetch(url, options)
+      if(response.ok){
+        const data = await response.json();
+        setStore( prevStore => ({...prevStore, details: data}) )
+      }else{
+        console.log('api get details error: ', response.status)
+      }
+    },
 
     addFavorites: (items)=>{
       setStore(prevStore => ({ ...prevStore, favorites: items }));

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faHeart, faSpinner } from '@fortawesome/free-solid-svg-icons'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/GlobalContext";
 
 // images
@@ -11,6 +11,7 @@ import starwars from '../../img/quote2.png'
 export default function Home() {
 
 	const { store, actions, setStore } = useContext(Context); 
+  const navigate = useNavigate()
 
   const planets = store.planets.results;
   const people = store.people.results;
@@ -21,8 +22,8 @@ export default function Home() {
     if (!favorites.includes(data)) {
         actions.addFavorites([...favorites, data]);
     }
-    console.log(favorites)
   };
+
 
   return (
     <> 
@@ -55,7 +56,7 @@ export default function Home() {
                         <p className="mb-3"><strong>Name:</strong> {character.name}</p>
 
                         <div className="d-flex">
-                          <Link className="me-auto" to={`https://www.swapi.tech/api/people/${character.uid}`} >
+                          <Link className="me-auto" to={`/people/${character.uid}`} >
                             <button className="btn btn-sm bg-black text-warning opacity-75 small">Details</button>
                           </Link>
                           <button className="btn btn-sm btn-light text-warning" onClick={() => addToFavorites(character)}>
@@ -84,7 +85,7 @@ export default function Home() {
                       <p className="mb-0"><strong>Type:</strong> Planet</p>
                       <p className="mb-3"><strong>Name:</strong> {planet.name}</p>
                       <div className="d-flex">
-                          <Link className="me-auto" to={`https://www.swapi.tech/api/people/${planet.uid}`} >
+                          <Link className="me-auto" to={`/planets/${planet.uid}`} >
                             <button className="btn btn-sm bg-black text-warning opacity-75 small">Details</button>
                           </Link>
                           <button className="btn btn-sm btn-light text-warning" onClick={() => addToFavorites(planet)}>
@@ -111,7 +112,7 @@ export default function Home() {
                       <p className="mb-0"><strong>Type:</strong> Starship</p>
                       <p className="mb-3"><strong>Name:</strong> {ship.name}</p>
                       <div className="d-flex">
-                          <Link className="me-auto" to={`https://www.swapi.tech/api/people/${ship.uid}`} >
+                          <Link className="me-auto" to={`/starships/${ship.uid}`} >
                             <button className="btn btn-sm bg-black text-warning opacity-75 small">Details</button>
                           </Link>
                           <button className="btn btn-sm btn-light text-warning" onClick={() => addToFavorites(ship)}>

@@ -24,7 +24,7 @@ export default function CreateContact() {
     
 
     <div className=" bg-dark p-5 text-center" style={{minHeight:'80vh'}}>
-        <div clssName="d-flex justify-content-center align-items-center">
+        <div className="d-flex justify-content-center align-items-center">
           <form onSubmit={handleSubmit} className="rounded p-5 bg-white m-auto" style={{width:'100%', maxWidth:'800px'}}>
             <h2 className="text-center">Create a new contact</h2>
             <label htmlFor='name' >Name</label>

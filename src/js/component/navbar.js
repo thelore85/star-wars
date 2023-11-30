@@ -25,13 +25,13 @@ export const Navbar = () => {
           <Link to="/contacts" style={{ textDecoration:'none'}}>
             <span className="mb-0 me-4 text-white">Contacts</span>
           </Link>
-          <Link to="/People" style={{ textDecoration:'none'}}>
+          <Link to="/people" style={{ textDecoration:'none'}}>
             <span className="mb-0 me-4 text-white">People</span>
           </Link>
-          <Link to="/Planets" style={{ textDecoration:'none'}}>
+          <Link to="/planets" style={{ textDecoration:'none'}}>
             <span className="mb-0 me-4 text-white">Planets</span>
           </Link>
-          <Link to="/Starships" style={{ textDecoration:'none'}}>
+          <Link to="/starships" style={{ textDecoration:'none'}}>
             <span className="mb-0 me-4 text-white">Starships</span>
           </Link>
 
