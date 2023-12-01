@@ -7,6 +7,8 @@ import Contacts from "./views/Contacts";
 import Home from "./views/Home";
 import CreateContact from "./views/CreateContact";
 import People from "./views/People";
+import PeopleDetails from "./views/PeopleDetails";
+import PlanetDetails from "./views/PlanetDetails";
 
 // Components
 import { Navbar } from "./component/navbar";
@@ -18,8 +20,6 @@ import StarshipDetails from "./views/StarshipDetails";
 
 // Context";
 import { GlobalContext } from "./store/GlobalContext";
-import PeopleDetails from "./views/PeopleDetails";
-import PlanetDetails from "./views/PlanetDetails";
   
 
 export default function Layout() {
