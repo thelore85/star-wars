@@ -27,7 +27,7 @@ export default function Planets() {
         <div id="home" className="mb-5 p-5 bg-black" style={{ border:" 7px solid #ffc107", borderRadius:"25px"}}>
 
           {/* PLANETS */}
-          <h2 className="fw-bolder text-white mt-5 " >Planets</h2>
+          <h2 className="fw-bolder text-white mt-5 " >All Planets</h2>
           <ul className="list-unstyled mb-4 py-4 row border-bottom">
             { planets ? ( planets.map( (planet, i) => { return (
                   <div key={i} className="col-lg-3 col-md-6 p-2">
