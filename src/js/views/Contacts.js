@@ -36,7 +36,7 @@ export default function Contacts() {
     <section className="d-flex justify-content-center align-items-center bg-secondary" style={{ minHeight: '80vh'}}>
 
       <div style={{width:'100%', maxWidth: '800px'}}>
-        <h2 className="fw-bolder text-white text-center mt-5 " >BEST FRIENDS LIST</h2>
+        <h2 className="fw-bolder text-white text-center mt-5 " >BEST FRIENDS LIST!</h2>
         <div className=" my-5 p-5 rounded bg-white" >
           <ul className="list-unstyled mb-4">
             { users.length > 0 ? 
