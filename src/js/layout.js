@@ -24,7 +24,7 @@ import { GlobalContext } from "./store/GlobalContext";
 
 export default function Layout() {
 
-  const basename = process.env.BASENAME || "";
+  const basename = process.env.BASENAME || "/";
 
 	return (
     <GlobalContext >
